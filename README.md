@@ -8,7 +8,7 @@
 
 ## Data Source  
 1. COVID-19 Trend Data: https://covid.cdc.gov/covid-data-tracker/#datatracker-home
-2. States Characteristic Data: Upcoming
+2. State Characteristic Data: Upcoming
 
 ## Objective
 1. Train Random Forest and GBM model to forecast COVID-19 trend in following 7 days.
