@@ -1,6 +1,4 @@
 # Raw Data
 
-We use the public COVID-19 trend data from CDC.  
+Public COVID-19 trend data from CDC: https://covid.cdc.gov/covid-data-tracker/#datatracker-home
 
-## Reference: 
-https://covid.cdc.gov/covid-data-tracker/#datatracker-home
