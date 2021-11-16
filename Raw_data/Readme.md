@@ -6,5 +6,5 @@
   Vaccination Data from JHU: https://coronavirus.jhu.edu/vaccines/us-states
 
 * 2021-11-15:  
-**Caihan:** Combine two folders (Daily_Cases and Daily_Deaths) to create  
-**Yifeng:** combine vaccine data(people_vaccined_us_timeline.csv) with covid_new.pos_cases.csv[positivee cases and death cases] to new table, named: covid_new.pos.vacine_cases.csv
+**Caihan:** Combine two folders (Daily_Cases and Daily_Deaths) to create "Deaths_Cases.csv"
+**Yifeng:** combine "people_vaccined_us_timeline.csv"(Vaccine data) with "Deaths_Cases.csv"[positivee cases and death cases data] to new table, named: "Deaths_Cases_Vaccine.csv"
