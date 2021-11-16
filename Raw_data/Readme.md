@@ -5,3 +5,5 @@
 2. **people_vaccinated_us_timeline.csv:**  
   Vaccination Data fron JHU: https://coronavirus.jhu.edu/vaccines/us-states
 
+* 2021-11-15:
+combine vaccine data(people_vaccined_us_timeline.csv) with covid_new.pos_cases.csv[positivee cases and death cases] to new table, named: covid_new.pos.vacine_cases.csv
