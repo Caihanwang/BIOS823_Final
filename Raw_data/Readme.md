@@ -7,4 +7,4 @@
 
 * 2021-11-15:  
 **Caihan:** Combine two folders (Daily_Cases and Daily_Deaths) to create "Deaths_Cases.csv"  
-**Yifeng:** combine "people_vaccined_us_timeline.csv"(Vaccine data) with "Deaths_Cases.csv"[positivee cases and death cases data] to new table, named: "Deaths_Cases_Vaccine.csv"
+**Yifeng:** Combine "people_vaccined_us_timeline.csv"(Vaccine data) with "Deaths_Cases.csv"[positivee cases and death cases data] to new table, named: "Deaths_Cases_Vaccine.csv"
