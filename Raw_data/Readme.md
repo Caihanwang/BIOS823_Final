@@ -15,5 +15,5 @@
 **Yifeng:** Combine "people_vaccined_us_timeline.csv"(Vaccine data) with "Deaths_Cases.csv"[positive cases and death cases data] to new table, named: "Deaths_Cases_Vaccine.csv". [Code](https://github.com/Caihanwang/BIOS823_Final/blob/main/Scripts/Preprocessing/Merge_Vaccination.py)  
 
 * 2021-11-16:  
-**Yuxuan:** Merge "Deaths_Cases_Vaccine.csv" with state policy database and state character data.  
+**Yuxuan:** Merge "Deaths_Cases_Vaccine.csv" with state policy database and state character data and create "final_data.csv"
 
