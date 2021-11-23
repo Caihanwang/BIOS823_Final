@@ -8,7 +8,7 @@
 
 ## Data Source  
 1. COVID-19 Trend Data: https://covid.cdc.gov/covid-data-tracker/#datatracker-home
-2. Vaccination Data: https://coronavirus.jhu.edu/vaccines/us-states
+2. Vaccination Data: https://github.com/govex/COVID-19/tree/master/data_tables/vaccine_data/us_data/time_series
 3. State Characteristic Data: Upcoming
 
 ## Objective
