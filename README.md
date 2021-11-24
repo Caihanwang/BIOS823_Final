@@ -20,12 +20,21 @@ This is our final dashboard. Please feel free to explore it. **[link](https://co
 3. Deploy the model into a dashboard.
 
 ## Data Science Plan
-### 1. Data Plan
-### 2. Machine Learning Plan
-### 3. Operations Plan
-### 4. Technology Stack
+**1. Data Plan**  
+
+**2. Machine Learning Plan**  
+
+**3. Operations Plan**  
+
+**4. Technology Stack**  
+
 
 ## Roles, responsibilities and timed milestones
+**Caihan Wang:**  
+
+**Yifeng Tang:**  
+
+**Yuxuan Chen:**  
 
 **Timeline**: 
 due: 11/22/2021
