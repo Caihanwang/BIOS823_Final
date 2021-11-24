@@ -24,12 +24,25 @@ This is our final dashboard. Please feel free to explore it. **[link](https://co
 The initial data we had was COVID-19 daily cases and deaths by state from 2021/2/10 to 2021/11/14, vaccination data and state characteristic data. We merge them together and clean the data by creating lag variables and split it to 7 datasets. We will utilize these 7 datasets to train and test 7 models for daily cases prediction and 7 models for daily deaths prediction.  
 
 **2. Machine Learning Plan**  
-To predict daily case and daily death, based on literature review, we decide to fit Random Forest models and XGBoost models by 7 datasets mentioned above. For each model, we need to tune parameters to reduce error and reach optimal prediction on test dataset. And then we will fit models using the parameter tuning results. After model fiting, we choose to evaluate the models by calculating RMSE of models on test dataset. After evaluation, we can choose Random Forest models or XGBoost models to do our final prediction from 11/15 to 11/21 and compare our prediction values with true number of cases/deaths on CDC website.  
+To predict daily case and daily death, based on literature review, we decide to fit Random Forest models and XGBoost models by 7 datasets mentioned above.  
+* Parameter Tuning: For each model, we need to tune parameters to reduce error and reach optimal prediction on test dataset. So we need to tune the parameters by comparing RMSE
+* Model Fitting: We will fit models using the parameter tuning results.  
+* Model Evaluation: After model fiting, we choose to evaluate the models by calculating RMSE of models on test dataset. 
+* Model Validation: We can choose the best models (Random Forest models or XGBoost models) to do our final prediction from 11/15 to 11/21 and compare our prediction values with true number of cases/deaths on CDC website.  
 
-**3. Operations Plan**  
+**3. Operations Plan (8~10 Days)**  
+* Data Merging (1 day)
+* Exploratory Data Analysis (1 day)
+* Data Cleaning and Encoding (1 day)
+* Model Parameter Tuning/ Fitting/ Evaluation (2~3 days)
+* Model Validation (1 day)
+* Dashboard Deployment (1~2 days)
+* Fnial Report (1 day)
 
 
 **4. Technology Stack**  
+
+
 
 
 ## Roles, responsibilities and timed milestones
