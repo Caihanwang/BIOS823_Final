@@ -21,6 +21,8 @@ This is our final dashboard. Please feel free to explore it. **[link](https://co
 
 ## Data Science Plan
 **1. Data Plan**  
+The COVID-19 trend data from CDC is utilized to train, test and validate the model. The initial data we had was COVID-19 daily cases and deaths by state from 2021/2/10 to 2021/11/14. Also, we 
+
 
 **2. Machine Learning Plan**  
 
