@@ -52,19 +52,36 @@ To predict daily case and daily death, based on literature review, we decide to 
 * Data download, merging and cleaning
 * XGB model parameter tuning
 * XGB model fitting
-* XGB model 
+* XGB model Evaluation
+* XGB model Validation
+* Github organize
+* Final report edit
 
 **Yifeng Tang:**  
+* Data download, merging and cleaning
+* XGB model parameter tuning
+* XGB model fitting
+* XGB model Evaluation
+* Dashboard construct
+* Dashboard deployment
+* Final report edit
+
 
 **Yuxuan Chen:**  
+* Data download, merging and cleaning
+* Exploratory data analysis
+* RF model parameter tuning
+* RF model fitting
+* RF model Evaluation
+* RF model Validation
+* Final report edit
 
-**Timeline**: 
-due: 11/24/2021
 
-11/15/2021 dataset
+**Timeline**:  
+*due: 11/24/2021*
 
-11/18/2021 modeling
-
-11/21/2021 report/application
+* 11/16/2021 Data download, merging and cleaning, EDA
+* 11/20/2021 Modeling
+* 11/22/2021 Dashboard and Final report
 
 
