@@ -21,7 +21,7 @@ This is our final dashboard. Please feel free to explore it. **[link](https://co
 
 ## Data Science Plan
 **1. Data Plan**  
-The initial data we had was COVID-19 daily cases and deaths by state from 2021/2/10 to 2021/11/14, vaccination data and state characteristic data. We merge them together and utilize it to train and test models
+The initial data we had was COVID-19 daily cases and deaths by state from 2021/2/10 to 2021/11/14, vaccination data and state characteristic data. We merge them together and utilize it to train and test models. 
 The COVID-19 trend data from CDC combined with vaccination data and state characteristic data is utilized to train, test and validate the model. The initial data we had was COVID-19 daily cases and deaths by state from 2021/2/10 to 2021/11/14. The data cleaning process is merging vacc
 
 
