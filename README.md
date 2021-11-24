@@ -41,7 +41,9 @@ To predict daily case and daily death, based on literature review, we decide to 
 
 
 **4. Technology Stack**  
-
+* Database: Data cleaning product will be stored in github page and jupyter notebookes
+* Python Packages: 
+* Cloud Platform: [Github]()
 
 
 
