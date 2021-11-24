@@ -49,8 +49,10 @@ To predict daily case and daily death, based on literature review, we decide to 
 
 ## Roles, responsibilities and timed milestones
 **Caihan Wang:**  
-* Data download and merging (Due: 11/14)
-* 
+* Data download, merging and cleaning
+* XGB model parameter tuning
+* XGB model fitting
+* XGB model 
 
 **Yifeng Tang:**  
 
