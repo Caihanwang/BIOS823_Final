@@ -42,20 +42,22 @@ To predict daily case and daily death, based on literature review, we decide to 
 
 **4. Technology Stack**  
 * Database: Data cleaning product will be stored in github page and jupyter notebookes
-* Python Packages: [requirement.txt]()
+* Python Packages: [requirement.txt](https://github.com/Caihanwang/BIOS823_Final/blob/main/requirement.txt)
 * Cloud Platform: deploy our dashboard by Heroku
 
 
 
 ## Roles, responsibilities and timed milestones
 **Caihan Wang:**  
+* Data download and merging (Due: 11/14)
+* 
 
 **Yifeng Tang:**  
 
 **Yuxuan Chen:**  
 
 **Timeline**: 
-due: 11/22/2021
+due: 11/24/2021
 
 11/15/2021 dataset
 
