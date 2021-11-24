@@ -21,13 +21,13 @@ This is our final dashboard. Please feel free to explore it. **[link](https://co
 
 ## Data Science Plan
 **1. Data Plan**  
-The initial data we had was COVID-19 daily cases and deaths by state from 2021/2/10 to 2021/11/14, vaccination data and state characteristic data. We merge them together and utilize it to train and test models. 
-The COVID-19 trend data from CDC combined with vaccination data and state characteristic data is utilized to train, test and validate the model. The initial data we had was COVID-19 daily cases and deaths by state from 2021/2/10 to 2021/11/14. The data cleaning process is merging vacc
-
+The initial data we had was COVID-19 daily cases and deaths by state from 2021/2/10 to 2021/11/14, vaccination data and state characteristic data. We merge them together and clean the data by creating lag variables and split it to 7 datasets. We will utilize these 7 datasets to train and test 7 models for daily cases prediction and 7 models for daily deaths prediction.  
 
 **2. Machine Learning Plan**  
+To predict daily case and daily death, based on literature review, we decide to fit Random Forest models and XGBoost models by 7 datasets mentioned above. For each model, we need to tune parameters to reduce error and reach optimal prediction on test dataset. And then we will fit models using the parameter tuning results. After model fiting, we choose to evaluate the models by calculating RMSE of models on test dataset. After evaluation, we can choose Random Forest models or XGBoost models to do our final prediction from 11/15 to 11/21 and compare our prediction values with true number of cases/deaths on CDC website.  
 
 **3. Operations Plan**  
+
 
 **4. Technology Stack**  
 
