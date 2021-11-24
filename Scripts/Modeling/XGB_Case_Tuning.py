@@ -13,12 +13,21 @@ pd.set_option('display.max_rows', None)
 
 
 """Create Final Data List"""
-num = range(7)
 
 final_data = pd.read_csv("final_data.csv")
 
+# change the date format:
+format = '%Y-%m-%d'
+Da = []
+for index, row in final_data.iterrows():
+    #print(row['c1'], row['c2'])
+    Da.append(datetime.datetime.strptime(row["Date"], format).date())
+final_data["Date"] = Da
+
 final_data_list = {}
 
+# Create lag varaibles
+num = range(7)
 for i in num:
     final_data_test = final_data.copy(deep=True)
     j = i + 1
@@ -67,12 +76,22 @@ for i in num:
     final_data_test = final_data_test.drop(columns=['People_Fully_Vaccinated', 'tests_combined_total']).copy(deep = True)
 
     final_data_list["final_data_"+str(j)] = final_data_test
-    
+
+
+# Hold out data after 2021-11-15 for validation
+sep = [i for i in final_data_list]
+thresh = datetime.date(2021, 11, 15)
+predict_data_list = {}
+for i in sep:
+    predict_data_list[i] = final_data_list[i][final_data_list[i]['Date'] >= thresh]
+    final_data_list[i] = final_data_list[i][final_data_list[i]['Date'] < thresh]   
     
 
 """Parameters Tuning For XGBoost of Daily Case"""
 
 params_list = []
+
+num_boost_round = 999
 
 for i in final_data_list:
     
@@ -208,58 +227,74 @@ for i in final_data_list:
     
     params_list.append(params)
     
+    
+print(params_list)    
+
+
 
 """
-After tuning, the parameters for 7 models are:
-[{'max_depth': 7,
-  'min_child_weight': 1,
-  'eta': 0.05,
-  'subsample': 0.6,
-  'colsample_bytree': 0.5,
-  'objective': 'reg:linear',
-  'eval_metric': 'mae'},
- {'max_depth': 6,
-  'min_child_weight': 4,
-  'eta': 0.1,
-  'subsample': 0.6,
-  'colsample_bytree': 0.5,
-  'objective': 'reg:linear',
-  'eval_metric': 'mae'},
- {'max_depth': 7,
-  'min_child_weight': 1,
-  'eta': 0.1,
-  'subsample': 0.6,
-  'colsample_bytree': 0.6,
-  'objective': 'reg:linear',
-  'eval_metric': 'mae'},
- {'max_depth': 8,
-  'min_child_weight': 3,
-  'eta': 0.005,
-  'subsample': 0.6,
-  'colsample_bytree': 0.6,
-  'objective': 'reg:linear',
-  'eval_metric': 'mae'},
- {'max_depth': 5,
-  'min_child_weight': 0,
-  'eta': 0.05,
-  'subsample': 0.6,
-  'colsample_bytree': 0.5,
-  'objective': 'reg:linear',
-  'eval_metric': 'mae'},
- {'max_depth': 7,
-  'min_child_weight': 2,
-  'eta': 0.05,
-  'subsample': 0.6,
-  'colsample_bytree': 0.5,
-  'objective': 'reg:linear',
-  'eval_metric': 'mae'},
- {'max_depth': 8,
-  'min_child_weight': 0,
-  'eta': 0.05,
-  'subsample': 0.6,
-  'colsample_bytree': 0.5,
-  'objective': 'reg:linear',
-  'eval_metric': 'mae'}]
+Parameters Tuning Result
+
+[
+    {'max_depth': 4, 
+    'min_child_weight': 2, 
+    'eta': 0.05, 
+    'subsample': 0.6, 
+    'colsample_bytree': 0.6, 
+    'objective': 'reg:linear', 
+    'eval_metric': 'mae'}, 
+    
+    {'max_depth': 5, 
+    'min_child_weight': 2, 
+    'eta': 0.05, 
+    'subsample': 0.6, 
+    'colsample_bytree': 0.4, 
+    'objective': 'reg:linear', 
+    'eval_metric': 'mae'}, 
+
+    {'max_depth': 6, 
+    'min_child_weight': 1, 
+    'eta': 0.05, 
+    'subsample': 0.6, 
+    'colsample_bytree': 0.6, 
+    'objective': 'reg:linear', 
+    'eval_metric': 'mae'}, 
+    
+    {'max_depth': 6, 
+    'min_child_weight': 3, 
+    'eta': 0.1, 
+    'subsample': 0.6, 
+    'colsample_bytree': 0.6, 
+    'objective': 'reg:linear', 
+    'eval_metric': 'mae'}, 
+    
+    {'max_depth': 5, 
+    'min_child_weight': 1, 
+    'eta': 0.05, 
+    'subsample': 0.6, 
+    'colsample_bytree': 0.6, 
+    'objective': 'reg:linear', 
+    'eval_metric': 'mae'}, 
+    
+    {'max_depth': 5, 
+    'min_child_weight': 2, 
+    'eta': 0.05, 
+    'subsample': 0.6, 
+    'colsample_bytree': 0.4, 
+    'objective': 'reg:linear', 
+    'eval_metric': 'mae'}, 
+    
+    {'max_depth': 6, 
+    'min_child_weight': 1, 
+    'eta': 0.05, 
+    'subsample': 0.6, 
+    'colsample_bytree': 0.6, 
+    'objective': 'reg:linear', 
+    'eval_metric': 'mae'}
+    
+    ]
+
+
 
 
 """
