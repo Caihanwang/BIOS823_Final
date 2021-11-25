@@ -4,7 +4,10 @@
 
 **Team Name**: Nintendo
 
-**Team Members**: Caihan Wang, Yifeng Tang, Yuxuan Chen  
+**Team Members**: 
+* Caihan Wang, from BIOSTAT program
+* Yifeng Tang, from BIOSTAT program
+* Yuxuan Chen  from STAT program
 
 ## Dashboard
 This is our final dashboard. Please feel free to explore it. **[link](https://covid19-project-823.herokuapp.com/)**  
