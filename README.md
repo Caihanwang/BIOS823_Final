@@ -21,7 +21,7 @@ This is our final dashboard. Please feel free to explore it. **[link](https://co
 
 ## Data Science Plan
 **1. Data Plan**  
-The initial data we had was COVID-19 daily cases and deaths by state from 2021/2/10 to 2021/11/14, vaccination data and state characteristic data. We merge them together and clean the data by creating lag variables and split it to 7 datasets. We will utilize these 7 datasets to train and test 7 models for daily cases prediction and 7 models for daily deaths prediction.  
+In this project, our goal was to predict the daily number of Covid-19 confirmed cases and deaths over a week. Compared to XGBoost, Random Forest model was our final choice considering it had lower RMSE. In this way, our final outputs were 14 Random Forest models, 7 for daily deaths forecast of future 7 days respectively and for daily confirmed cases forecast of future 7 days. In addition, we validated our models by forecasting the daily death and daily cases from Nov 15 2021 to Nov 21 2021 and got acceptable results. 
 
 **2. Machine Learning Plan**  
 To predict daily case and daily death, based on literature review, we decide to fit Random Forest models and XGBoost models by 7 datasets mentioned above.  
