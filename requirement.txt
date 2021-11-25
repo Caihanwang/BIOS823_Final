@@ -1,1 +1,16 @@
-
+# The following is the environment(packages) required for this project:
+dash==2.0.0
+pandas==1.2.2
+gunicorn
+numpy==1.20.1
+plotly==5.3.1
+dash_bootstrap_components==0.13.1
+Flask==2.0.2
+glob
+os
+pillow==8.1.0
+xgboost==1.1.1
+numpy==1.19.1
+scikit-learn==0.23.2
+seaborn==0.10.1
+matplotlib==3.3.1
