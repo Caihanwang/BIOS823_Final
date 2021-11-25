@@ -1,4 +1,4 @@
-# Covid-19 Daily Case and Death Prediction
+# COVID-19 Daily Case and Death Prediction
 Team Member: [Caihan Wang](https://github.com/Caihanwang), [Yifeng Tang](https://github.com/Yifeng-T), [Yuxuan Chen](https://github.com/YuxuanMonta)  
 
 ## Website Source:
@@ -29,14 +29,20 @@ Inspired by the EDA, we intuitively add lagged data as our new features. In all 
 ## Modeling
 After gathering the data and feature engineering, the modeling process began. After reading some literature and reviewing a few Kaggle competitions. We found boosting tree model and random forest model are two of the most prevalent algorithms when forecasting Covid-19 cases and death numbers. Therefore, the two algorithms just mentioned could be a good starting point for this project.
 ### Random Forest
-For the Random Forest model, we first simply tried to train the model for case number prediction of the first day by using default parameters. The RMSE of this model was about 728.8, which could be improved. Therefore, we tried to do hyperparameter tuning. The most important parameters in the Random Forest Model are the number of trees in the forest (n_estimators) and the number of features to consider when looking for the best split (max_features). Thus, we would focus on those two parameters when tuning. The optimal value max_features was actually strictly proved that it should be about the number of parameters divided by 3, which resulted in 21 in our case. We would verify that as well. The table below showed the parameter we tried.   
-
-For the sake of time cost, we first used randomized search cross validation and the best parameter combination was that 400 for the number of trees, 2 for minimum samples split, 1 for minimum samples leaf, 21 for maximum number of features, and no limit for maximum depth.   
+For the Random Forest model, we first simply tried to train the model for case number prediction of the first day by using default parameters. The RMSE of this model was about 728.8, which could be improved. Therefore, we tried to do hyperparameter tuning. The most important parameters in the Random Forest Model are the number of trees in the forest (n_estimators) and the number of features to consider when looking for the best split (max_features). Thus, we would focus on those two parameters when tuning. The optimal value max_features was actually strictly proved that it should be about the number of parameters divided by 3, which resulted in 21 in our case. We would verify that as well. The table below showed the parameter we tried.  
+![WechatIMG33.png](https://i.loli.net/2021/11/25/uqRw32QfanrJUPH.png)
+For the sake of time cost, we first used randomized search cross validation and the best parameter combination was that 400 for the number of trees, 2 for minimum samples split, 
+![WechatIMG34.png](https://i.loli.net/2021/11/25/uOQGLTMR4Dht8sH.png)
+1 for minimum samples leaf, 21 for maximum number of features, and no limit for maximum depth.   
 For the two important parameters, based on the plot below, we found that the optimal number of features was indeed 21, while the number of trees did not have a significant impact on the model performance, which should hold for all 14 models. Therefore, we then tried grid research cross validation to further optimize the parameters. Finally, our final choice for parameters was 1000 for the number of trees, 20 for number of features, 1 for minimum sample leaf and 3 for minimum samples split.  
+![351637812067_.pic_hd.jpg](https://i.loli.net/2021/11/25/ivnhS8RoTgwkL3B.png)
 ### XGBoost
 For the XGBoost model, we firstly train the model 1 (1st day) for daily cases in the training dataset by default parameters. The RMSE of this model was about 810.4, which needed to be decreased. Therefore, we decided to start model parameter tuning for XGBoost. The parameters needed to tune are max_depth, min_child_weight, subsample, colsample, ETA. We use a grid-search method to tune these parameters.  The table below showed the parameter we tried.  
+![WechatIMG36.png](https://i.loli.net/2021/11/25/zpRuWO9bmKBL6q5.png)
 After a time-consuming tuning process, we finally reached the optimal parameters for this XGBoost model ( max_depth: 4, min_child_weight: 2, subsample: 0.6, colsample: 0.6, ETA: 0,05 ), which have decreased the RMSE to 661.5. Also, we did the same tuning process for the following models and calculated the best parameters for each model.  
-With the best parameters for each model, we fit the XGBoost models and calculate RMSEs for future comparison and evaluation.   
+With the best parameters for each model, we fit the XGBoost models and calculate RMSEs for future comparison and evaluation.  
+![WechatIMG37.png](https://i.loli.net/2021/11/25/4RT5YVwWX6PBrA9.png)
+Also,  two importances plots are shown above, indicating that the numbers of cases and deaths were significantly weekly cyclical in that 7 days lagged data was the most important predictors in all XGBoost models, which is the same result as random forest models.
 ### Model Evaluation and Comparison
 The figures following are the comparison of XGBoost and Random Forest by RMSE in each model.
 ![WechatIMG29.png](https://i.loli.net/2021/11/25/oxNB2HksTZ9icgW.png) 
